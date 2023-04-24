@@ -55,11 +55,7 @@ function App() {
         }
       </section>
       <section className='flex flex-col gap-2'>
-        <h2 className='text-xl font-semibold'>Siguiente turno:</h2>
-        <div className='flex gap-2'>
-          <Square isSelected={turn == TURNS.X}>{TURNS.X}</Square>
-          <Square isSelected={turn == TURNS.O}>{TURNS.O}</Square>
-        </div>
+        <h2 className='text-xl font-semibold'>{!winner && <p>Turno de {turn}</p> || <p>Juego finalizado</p>}</h2>
       </section>
 
       <FinishModal resetGame={resetGame} winner={winner}/>
